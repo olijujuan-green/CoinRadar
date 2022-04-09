@@ -15,13 +15,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+        window?.windowScene = windowScene
         window?.rootViewController = createTabBarController()
         window?.makeKeyAndVisible()
     }
     
     func createNewsNC() -> UINavigationController {
         
-        let img = UIImage(systemName: "")
+        let img = UIImage(systemName: "newspaper")
         let vc = NewsVC()
         let nav = UINavigationController(rootViewController: vc)
         nav.tabBarItem = UITabBarItem(title: "News", image: img, tag: 0)

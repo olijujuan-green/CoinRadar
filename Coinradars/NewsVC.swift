@@ -12,7 +12,7 @@ class NewsVC: UIViewController {
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.backgroundColor = .systemOrange
+        cv.backgroundColor = .systemBackground
         cv.translatesAutoresizingMaskIntoConstraints = false
         return cv
     }()
@@ -20,7 +20,7 @@ class NewsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureVC()
-        configureViews()
+        configureCollectionView()
     }
     
     func configureVC() {
@@ -28,9 +28,13 @@ class NewsVC: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = false
     }
     
-    func configureViews()  {
+    func configureCollectionView()  {
         view.addSubview(collectionView)
         collectionView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
+        
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.register(NewsCell.self, forCellWithReuseIdentifier: NewsCell.newsCellId)
     }
 
 
@@ -46,8 +50,8 @@ extension NewsVC : UICollectionViewDelegate, UICollectionViewDataSource, UIColle
         return 5
     }
     
-    func collectionView(_ collectionView: UICollectionView, selectionFollowsFocusForItemAt indexPath: IndexPath) -> Bool {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath)
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NewsCell.newsCellId, for: indexPath) as! NewsCell
         return cell
     }
     

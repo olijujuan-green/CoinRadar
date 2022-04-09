@@ -13,6 +13,7 @@
 		4CAF580D2800EF0D001A009D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CAF580B2800EF0D001A009D /* Main.storyboard */; };
 		4CAF580F2800EF77001A009D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CAF580E2800EF77001A009D /* Assets.xcassets */; };
 		4CAF58122800EF77001A009D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CAF58102800EF77001A009D /* LaunchScreen.storyboard */; };
+		4CAF581A28010685001A009D /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAF581928010684001A009D /* NewsCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		4CAF580E2800EF77001A009D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4CAF58112800EF77001A009D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4CAF58132800EF77001A009D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4CAF581928010684001A009D /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				4CAF58052800EF0D001A009D /* AppDelegate.swift */,
 				4CAF58072800EF0D001A009D /* SceneDelegate.swift */,
 				4CAF58092800EF0D001A009D /* NewsVC.swift */,
+				4CAF581928010684001A009D /* NewsCell.swift */,
 				4CAF580B2800EF0D001A009D /* Main.storyboard */,
 				4CAF580E2800EF77001A009D /* Assets.xcassets */,
 				4CAF58102800EF77001A009D /* LaunchScreen.storyboard */,
@@ -140,6 +143,7 @@
 			files = (
 				4CAF580A2800EF0D001A009D /* NewsVC.swift in Sources */,
 				4CAF58062800EF0D001A009D /* AppDelegate.swift in Sources */,
+				4CAF581A28010685001A009D /* NewsCell.swift in Sources */,
 				4CAF58082800EF0D001A009D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
