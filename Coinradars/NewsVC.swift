@@ -9,6 +9,9 @@ import UIKit
 
 class NewsVC: UIViewController {
     
+    var articles: [Article] = []
+    
+    
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -21,6 +24,7 @@ class NewsVC: UIViewController {
         super.viewDidLoad()
         configureVC()
         configureCollectionView()
+        getArticles()
     }
     
     func configureVC() {
@@ -36,6 +40,21 @@ class NewsVC: UIViewController {
         collectionView.delegate = self
         collectionView.register(NewsCell.self, forCellWithReuseIdentifier: NewsCell.newsCellId)
     }
+    
+    func getArticles() {
+        NetworkManager.shared.getArticles { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let newArticles):
+                self.articles = newArticles
+                    DispatchQueue.main.async {
+                        self.collectionView.reloadData()
+                    }
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
 
 
 }
@@ -47,11 +66,12 @@ extension NewsVC : UICollectionViewDelegate, UICollectionViewDataSource, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return self.articles.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NewsCell.newsCellId, for: indexPath) as! NewsCell
+        cell.set(article: self.articles[indexPath.row])
         return cell
     }
     

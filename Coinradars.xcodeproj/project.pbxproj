@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C07F7F9280D02E40024B755 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C07F7F8280D02E40024B755 /* Models.swift */; };
+		4C07F7FB280D03D80024B755 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C07F7FA280D03D80024B755 /* NetworkManager.swift */; };
 		4CAF58062800EF0D001A009D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAF58052800EF0D001A009D /* AppDelegate.swift */; };
 		4CAF58082800EF0D001A009D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAF58072800EF0D001A009D /* SceneDelegate.swift */; };
 		4CAF580A2800EF0D001A009D /* NewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAF58092800EF0D001A009D /* NewsVC.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C07F7F8280D02E40024B755 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		4C07F7FA280D03D80024B755 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		4CAF58022800EF0D001A009D /* Coinradars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coinradars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CAF58052800EF0D001A009D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CAF58072800EF0D001A009D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +70,8 @@
 				4CAF580E2800EF77001A009D /* Assets.xcassets */,
 				4CAF58102800EF77001A009D /* LaunchScreen.storyboard */,
 				4CAF58132800EF77001A009D /* Info.plist */,
+				4C07F7F8280D02E40024B755 /* Models.swift */,
+				4C07F7FA280D03D80024B755 /* NetworkManager.swift */,
 			);
 			path = Coinradars;
 			sourceTree = "<group>";
@@ -141,10 +147,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C07F7FB280D03D80024B755 /* NetworkManager.swift in Sources */,
 				4CAF580A2800EF0D001A009D /* NewsVC.swift in Sources */,
 				4CAF58062800EF0D001A009D /* AppDelegate.swift in Sources */,
 				4CAF581A28010685001A009D /* NewsCell.swift in Sources */,
 				4CAF58082800EF0D001A009D /* SceneDelegate.swift in Sources */,
+				4C07F7F9280D02E40024B755 /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
