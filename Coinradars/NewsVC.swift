@@ -42,14 +42,14 @@ class NewsVC: UIViewController {
     }
     
     func getArticles() {
-        NetworkManager.shared.getArticles { result in
+        NetworkManager.shared.getArticles { [weak self] result in
+            guard let self = self else { return }
             switch result {
             case .success(let newArticles):
                 self.articles = newArticles
-                for article in newArticles {
-                    print(article.title)
-                    
-                }
+                    DispatchQueue.main.async {
+                        self.collectionView.reloadData()
+                    }
             case .failure(let error):
                 print(error.localizedDescription)
             }
