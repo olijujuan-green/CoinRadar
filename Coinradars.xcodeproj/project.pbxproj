@@ -66,12 +66,12 @@
 				4CAF58072800EF0D001A009D /* SceneDelegate.swift */,
 				4CAF58092800EF0D001A009D /* NewsVC.swift */,
 				4CAF581928010684001A009D /* NewsCell.swift */,
+				4C07F7FA280D03D80024B755 /* NetworkManager.swift */,
+				4C07F7F8280D02E40024B755 /* Models.swift */,
 				4CAF580B2800EF0D001A009D /* Main.storyboard */,
 				4CAF580E2800EF77001A009D /* Assets.xcassets */,
 				4CAF58102800EF77001A009D /* LaunchScreen.storyboard */,
 				4CAF58132800EF77001A009D /* Info.plist */,
-				4C07F7F8280D02E40024B755 /* Models.swift */,
-				4C07F7FA280D03D80024B755 /* NetworkManager.swift */,
 			);
 			path = Coinradars;
 			sourceTree = "<group>";
