@@ -32,7 +32,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func createCoinListNC() -> UINavigationController {
         let img = UIImage(systemName: "bitcoinsign.circle")
-        let vc = UIViewController()
+        let vc = CoinListVC()
         let nav = UINavigationController(rootViewController: vc)
         nav.tabBarItem = UITabBarItem(title: "Coins", image: img, tag: 1)
         
