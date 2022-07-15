@@ -10,6 +10,8 @@ import UIKit
 
 class CoinListVC: UIViewController {
     
+    var coins = [Coin]()
+    
     let tableView: UITableView = {
         let table = UITableView()
         table.rowHeight = 70
@@ -20,6 +22,7 @@ class CoinListVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getCoins()
         configureVC()
         configureTableView()
     }
@@ -40,6 +43,18 @@ class CoinListVC: UIViewController {
         tableView.register(CoinCell.self, forCellReuseIdentifier: CoinCell.reuseId)
     }
     
+    func getCoins() {
+        NetworkManager.shared.getCoins { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let retrievedCoins):
+                self.coins = retrievedCoins
+            case .failure(let error):
+                print("Error:\n\(error.localizedDescription)")
+            }
+        }
+    }
+    
     
 }
 
@@ -48,7 +63,10 @@ extension CoinListVC: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 30
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+        return coins.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

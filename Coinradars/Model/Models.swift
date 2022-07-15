@@ -17,9 +17,9 @@ struct Article {
 
 struct Coin {
     let price: String
-    let changePctHour: String
+    let changePctHour: String?
     let symbol: String
     let name: String
-    let marketCap: String
+    let marketCap: String?
     let imageUrl: String
 }
